@@ -1,15 +1,17 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import { useState, useEffect, useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
-// import { NavigationContainer } from '@react-navigation/native';
+
+import AppNavigator from "./navigation/AppNavigator";
 
 
 // display the splash screen visible while we fetch data
 SplashScreen.preventAutoHideAsync();
+
 
 export default function App() {
   const [appIsLoaded, setAppIsLoaded] = useState(false);
@@ -20,18 +22,18 @@ export default function App() {
       try {
         // loading custom roboto font files path
         await Font.loadAsync({
-          "black": require("./assets/fonts/Roboto-Black.ttf"),
-          "blackItalic": require("./assets/fonts/Roboto-BlackItalic.ttf"),
-          "bold": require("./assets/fonts/Roboto-Bold.ttf"),
-          "boldItalic": require("./assets/fonts/Roboto-BoldItalic.ttf"),
-          "italic": require("./assets/fonts/Roboto-Italic.ttf"),
-          "light": require("./assets/fonts/Roboto-Light.ttf"),
-          "lightItalic": require("./assets/fonts/Roboto-LightItalic.ttf"),
-          "medium": require("./assets/fonts/Roboto-Medium.ttf"),
-          "mediumItalic": require("./assets/fonts/Roboto-MediumItalic.ttf"),
-        })
+          black: require("./assets/fonts/Roboto-Black.ttf"),
+          blackItalic: require("./assets/fonts/Roboto-BlackItalic.ttf"),
+          bold: require("./assets/fonts/Roboto-Bold.ttf"),
+          boldItalic: require("./assets/fonts/Roboto-BoldItalic.ttf"),
+          italic: require("./assets/fonts/Roboto-Italic.ttf"),
+          light: require("./assets/fonts/Roboto-Light.ttf"),
+          lightItalic: require("./assets/fonts/Roboto-LightItalic.ttf"),
+          medium: require("./assets/fonts/Roboto-Medium.ttf"),
+          mediumItalic: require("./assets/fonts/Roboto-MediumItalic.ttf"),
+        });
       } catch (err) {
-        console.warn('Loading custom fonts failed!', err);
+        console.warn("Loading custom fonts failed!", err);
       } finally {
         // set app to ready whether fonts loaded or failed
         setAppIsLoaded(true);
@@ -49,8 +51,7 @@ export default function App() {
     }
   }, [appIsLoaded]);
 
-
-  // if the app's not ready, return null which in turns 
+  // if the app's not ready, return null which in turns
   // shows loading splash screen, but if ready, app screen shows
   if (!appIsLoaded) {
     return null;
@@ -58,10 +59,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider style={styles.container} onLayout={onLayoutChange}>
-      <SafeAreaView>
-        <Text style={styles.title}>Welcome to ChitterChat!</Text>
-        <StatusBar style="auto" />
-      </SafeAreaView>
+      <AppNavigator />
     </SafeAreaProvider>
   );
 }
@@ -70,10 +68,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   title: {
-    fontFamily: "medium"
-  }
+    fontFamily: "medium",
+  },
 });
