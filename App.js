@@ -1,9 +1,11 @@
+import 'react-native-gesture-handler';
 import { useState, useEffect, useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+// import { NavigationContainer } from '@react-navigation/native';
 
 
 // display the splash screen visible while we fetch data
