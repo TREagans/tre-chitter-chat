@@ -31,6 +31,7 @@ export default function App() {
           lightItalic: require("./assets/fonts/Roboto-LightItalic.ttf"),
           medium: require("./assets/fonts/Roboto-Medium.ttf"),
           mediumItalic: require("./assets/fonts/Roboto-MediumItalic.ttf"),
+          regular: require("./assets/fonts/Roboto-Regular.ttf"),
         });
       } catch (err) {
         console.warn("Loading custom fonts failed!", err);

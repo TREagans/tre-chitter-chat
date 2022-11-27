@@ -27,7 +27,6 @@ const ChatScreen = (props) => {
   }, [textMessage]);
 
   return (
-
     // edges removes the additional area from SafeAreaView
     // we can list an array of sides to "keep" safe area
     <SafeAreaView 
