@@ -11,13 +11,13 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import AppInput from "../components/AppInput";
-import PageContainer from "../components/PageContainer";
-import AppButton from "../components/AppButton";
+import AppInput from "../../components/AppInput";
+import PageContainer from "../../components/PageContainer";
+import AppButton from "../../components/AppButton";
 import SignupScreen from "./SignupScreen";
 import SigninScreen from "./SigninScreen";
-import colors from "../constants/colors";
-import logo from "../assets/images/chat-bubbles.png";
+import colors from "../../constants/colors";
+import logo from "../../assets/images/chat-bubbles.png";
 
 const AuthScreen = (props) => {
   const [isSignedUp, setIsSignedUp] = useState(true);

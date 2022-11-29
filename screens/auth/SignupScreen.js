@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesome, Entypo, MaterialIcons } from "@expo/vector-icons";
 
-import AppButton from "../components/AppButton";
-import AppInput from "../components/AppInput";
+import AppButton from "../../components/AppButton";
+import AppInput from "../../components/AppInput";
 import { Image, StyleSheet, Text, View } from "react-native";
-import signupImg from "../assets/images/chat-bubbles.png";
+import signupImg from "../../assets/images/chat-bubbles.png";
 
 const SignupScreen = (props) => {
   const handleSignup = () => {
